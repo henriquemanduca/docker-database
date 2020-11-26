@@ -5,10 +5,11 @@ services:
     restart: unless-stopped
     image: 'bitnami/mongodb:latest'
     volumes:
-      - ~/Projetos/database/mongodb/:/data/db
+      - ~/database/mongodb/:/data/db
     ports:
       - 27017:27017
     environment:
+      - MONGODB_ROOT_PASSWORD=roo-password
       - MONGODB_DATABASE=my_database
       - MONGODB_USERNAME=my_user
       - MONGODB_PASSWORD=password
