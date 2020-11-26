@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   postgres:
-    container_name: postgresdb
+    container_name: postgres
     restart: unless-stopped
     image: 'bitnami/postgresql:latest'
     volumes:
@@ -9,9 +9,10 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_DB=gobarber
-      - POSTGRESQL_USERNAME=my_user
-      - POSTGRES_PASSWORD=password
+      - POSTGRESQL_DATABASE=gobarber
+      #- POSTGRESQL_USERNAME=my_user
+      - POSTGRESQL_PASSWORD=password
+
       
 networks:
   default:
